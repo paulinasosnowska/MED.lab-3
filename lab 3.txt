@@ -1,0 +1,13 @@
+Create view Sosnowska_WymiarDostawca as
+Select SupplierID, CompanyName, City, Country from Suppliers
+
+Create Sosnowska_WymiarProdukt as
+Select ProductID, ProductName, Categories.CategoryName from Products 
+join
+Categories ON Products.CategoryID=Categories.CategoryID
+
+Create Sosnowska_FaktyProdukty as
+Select ProductID, SuplierID, UnitsStock from Products 
+
+
+DROP VIEW Sosnowska_WymiarDostawca, Sosnowska_WymiarProdukt, Sosnowska_FaktyProdukty
